@@ -5,10 +5,14 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "glob": "^7.2.0",
+    "markdown-to-jsx": "^7.1.5",
+    "papercss": "^1.8.2",
     "react": "link:../node_modules/react",
     "react-dom": "^16.9.0",
     "react-scripts": "^3.0.1",
-    "react-use-navscroll": "link:.."
+    "react-use-navscroll": "link:..",
+    "wouter": "^2.8.0-alpha.2"
   },
   "scripts": {
     "start": "react-scripts start",

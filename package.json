@@ -1,7 +1,7 @@
 {
   "name": "react-use-navscroll",
-  "version": "1.0.0",
-  "description": "A React hook for navscroll detection",
+  "version": "0.1.0",
+  "description": "A React headless hook for navscroll detection",
   "author": "dej611",
   "license": "MIT",
   "repository": "dej611/react-use-navscroll",
@@ -20,7 +20,8 @@
     "start": "rollup -c -w",
     "prepare": "yarn run build",
     "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -d example/build"
+    "deploy": "gh-pages -d example/build",
+    "doc": "typedoc src/index.tsx --excludePrivate --json ./doc.json && node scripts/doc.js"
   },
   "dependencies": {},
   "peerDependencies": {
@@ -34,17 +35,29 @@
     "@rollup/plugin-node-resolve": "^9.0.0",
     "@rollup/plugin-typescript": "^5.0.2",
     "@rollup/plugin-url": "^5.0.1",
+    "@testing-library/jest-dom": "5.11.9",
     "@testing-library/react-hooks": "^3.2.1",
     "@types/jest": "^23.3.13",
     "@types/react": "^16.7.22",
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "babel-eslint": "^10.0.3",
     "cross-env": "^5.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.17.0",
     "gh-pages": "^2.0.1",
+    "prettier": "^2.0.4",
     "react": "^16.9.0",
     "react-scripts": "^3.4.0",
     "react-test-renderer": "^16.9.0",
     "rollup": "^2.26.9",
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "tslib": "^2.0.1",
+    "typedoc": "^0.22.10",
     "typescript": "^3.2.4"
   }
 }
