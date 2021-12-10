@@ -65,7 +65,7 @@ export type useNavScrollResult<T extends Element> = {
    */
   register: (
     id: string,
-    options: RegisterOptions<T>
+    options?: RegisterOptions<T>
   ) => RegisteredAttributes<T>;
   /**
    * Removes the given id from the tracking system.
