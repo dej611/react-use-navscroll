@@ -19,9 +19,24 @@ describe('useSizeDetector', () => {
     expect(result.current.useViewport).toBe(true);
   });
 
-  it('should not use the viewport when no root is passed but window is not available', () => {
+  it('should use the viewport but not change size when no root is passed but window is not available', () => {
     const { result } = renderHook((props) => useSizeDetector(props), {
-      initialProps: { ...getDefaultProps(), hasWindow: false }
+      initialProps: {
+        ...getDefaultProps(),
+        hasWindow: false
+      }
+    });
+    expect(result.current.targetSize).toBe(1);
+    expect(result.current.useViewport).toBe(true);
+  });
+
+  it('should use the root element when available rather than the viewport even when no window is available', () => {
+    const { result } = renderHook((props) => useSizeDetector(props), {
+      initialProps: {
+        ...getDefaultProps(),
+        root: document.createElement('div'),
+        hasWindow: false
+      }
     });
     expect(result.current.targetSize).toBe(1);
     expect(result.current.useViewport).toBe(false);
