@@ -28,7 +28,12 @@ export const Navbar = () => {
               <Link href='/examples'>Examples</Link>
             </li>
             <li>
-              <Link href='#'>Github</Link>
+              <a
+                href='https://github.com/dej611/react-use-navscroll'
+                target='_blank'
+              >
+                Github
+              </a>
             </li>
           </ul>
         </div>

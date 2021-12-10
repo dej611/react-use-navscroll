@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'wouter';
+import { Router, Route, Switch } from 'wouter';
 
 import { Navbar } from './Navbar';
 import { Menu } from './Menu';
@@ -23,51 +23,53 @@ const App = () => {
   return (
     <div className='row site'>
       <div className='md-12 col'>
-        <Route path={'/examples/:id'}>
-          <div style={{ position: 'fixed', top: 80, right: 0 }}>
-            <Menu />
+        <Router base='/react-use-navscroll'>
+          <Route path={'/examples/:id'}>
+            <div style={{ position: 'fixed', top: 80, right: 0 }}>
+              <Menu />
+            </div>
+          </Route>
+          <div className='row'>
+            <Navbar />
+            <Switch>
+              <Route path='/examples'>
+                <Examples />
+              </Route>
+              <Route path='/examples/sidebar'>
+                <FlatSidebar />
+                <SourceCode content={FlatExampleCode.content} />
+              </Route>
+              <Route path='/examples/nested_sidebar'>
+                <NestedSidebar />
+                <SourceCode content={NestedSidebarCode.content} />
+              </Route>
+              <Route path='/examples/accordion'>
+                <AccordionSidebar />
+                <SourceCode content={AccordionSidebarCode.content} />
+              </Route>
+              <Route path='/examples/topmenu'>
+                <TopMenu />
+                <SourceCode content={TopMenuCode.content} />
+              </Route>
+              <Route path='/examples/topmenu_horizontal'>
+                <TopMenuHorizontal />
+                <SourceCode content={TopMenuHorizontalCode.content} />
+              </Route>
+              <Route path='/examples/performance'>
+                <PerformancePage />
+              </Route>
+              <Route path='/documentation'>
+                <Documentation />
+              </Route>
+              <Route path='/api'>
+                <Api />
+              </Route>
+              <Route path=''>
+                <Documentation />
+              </Route>
+            </Switch>
           </div>
-        </Route>
-        <div className='row'>
-          <Navbar />
-          <Switch>
-            <Route path='/examples'>
-              <Examples />
-            </Route>
-            <Route path='/examples/sidebar'>
-              <FlatSidebar />
-              <SourceCode content={FlatExampleCode.content} />
-            </Route>
-            <Route path='/examples/nested_sidebar'>
-              <NestedSidebar />
-              <SourceCode content={NestedSidebarCode.content} />
-            </Route>
-            <Route path='/examples/accordion'>
-              <AccordionSidebar />
-              <SourceCode content={AccordionSidebarCode.content} />
-            </Route>
-            <Route path='/examples/topmenu'>
-              <TopMenu />
-              <SourceCode content={TopMenuCode.content} />
-            </Route>
-            <Route path='/examples/topmenu_horizontal'>
-              <TopMenuHorizontal />
-              <SourceCode content={TopMenuHorizontalCode.content} />
-            </Route>
-            <Route path='/examples/performance'>
-              <PerformancePage />
-            </Route>
-            <Route path='/documentation'>
-              <Documentation />
-            </Route>
-            <Route path='/api'>
-              <Api />
-            </Route>
-            <Route path=''>
-              <Documentation />
-            </Route>
-          </Switch>
-        </div>
+        </Router>
       </div>
     </div>
   );
