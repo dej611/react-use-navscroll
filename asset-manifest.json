@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/react-use-navscroll/static/css/main.59b03fb9.chunk.css",
-    "main.js": "/react-use-navscroll/static/js/main.d970a0df.chunk.js",
-    "main.js.map": "/react-use-navscroll/static/js/main.d970a0df.chunk.js.map",
+    "main.js": "/react-use-navscroll/static/js/main.789a1595.chunk.js",
+    "main.js.map": "/react-use-navscroll/static/js/main.789a1595.chunk.js.map",
     "runtime-main.js": "/react-use-navscroll/static/js/runtime-main.d13ee7fa.js",
     "runtime-main.js.map": "/react-use-navscroll/static/js/runtime-main.d13ee7fa.js.map",
     "static/css/2.43d05b29.chunk.css": "/react-use-navscroll/static/css/2.43d05b29.chunk.css",
-    "static/js/2.4bf00693.chunk.js": "/react-use-navscroll/static/js/2.4bf00693.chunk.js",
-    "static/js/2.4bf00693.chunk.js.map": "/react-use-navscroll/static/js/2.4bf00693.chunk.js.map",
+    "static/js/2.a14e02b8.chunk.js": "/react-use-navscroll/static/js/2.a14e02b8.chunk.js",
+    "static/js/2.a14e02b8.chunk.js.map": "/react-use-navscroll/static/js/2.a14e02b8.chunk.js.map",
     "index.html": "/react-use-navscroll/index.html",
-    "precache-manifest.cc8ed39989ec2264e25fa22593b33360.js": "/react-use-navscroll/precache-manifest.cc8ed39989ec2264e25fa22593b33360.js",
+    "precache-manifest.892c9590ee04875de1033f405c53bc84.js": "/react-use-navscroll/precache-manifest.892c9590ee04875de1033f405c53bc84.js",
     "service-worker.js": "/react-use-navscroll/service-worker.js",
     "static/css/2.43d05b29.chunk.css.map": "/react-use-navscroll/static/css/2.43d05b29.chunk.css.map",
     "static/css/main.59b03fb9.chunk.css.map": "/react-use-navscroll/static/css/main.59b03fb9.chunk.css.map",
-    "static/js/2.4bf00693.chunk.js.LICENSE.txt": "/react-use-navscroll/static/js/2.4bf00693.chunk.js.LICENSE.txt",
-    "static/js/main.d970a0df.chunk.js.LICENSE.txt": "/react-use-navscroll/static/js/main.d970a0df.chunk.js.LICENSE.txt"
+    "static/js/2.a14e02b8.chunk.js.LICENSE.txt": "/react-use-navscroll/static/js/2.a14e02b8.chunk.js.LICENSE.txt",
+    "static/js/main.789a1595.chunk.js.LICENSE.txt": "/react-use-navscroll/static/js/main.789a1595.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d13ee7fa.js",
     "static/css/2.43d05b29.chunk.css",
-    "static/js/2.4bf00693.chunk.js",
+    "static/js/2.a14e02b8.chunk.js",
     "static/css/main.59b03fb9.chunk.css",
-    "static/js/main.d970a0df.chunk.js"
+    "static/js/main.789a1595.chunk.js"
   ]
 }
