@@ -31,6 +31,7 @@ export const Navbar = () => {
               <a
                 href='https://github.com/dej611/react-use-navscroll'
                 target='_blank'
+                rel='noopener noreferrer'
               >
                 Github
               </a>
