@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,QACI,QAAS,CACT,eAAgB,CAChB,uBACJ","file":"main.59b03fb9.chunk.css","sourcesContent":[".sticky {\n    top: 80px;\n    position: sticky;\n    position: -webkit-sticky;\n}"]}
