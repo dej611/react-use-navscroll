@@ -4,7 +4,7 @@
 #### useNavScroll
 
 
-`useNavScroll(args : useNavScrollArgs) => useNavScrollResult<T extends Element>`
+`useNavScroll(args : useNavScrollArgs) => useNavScrollResult`
 
 This is the main hook: use it in a react function component to track  
 the state of the passed ids. The function accepts an initial configuration  
@@ -46,7 +46,7 @@ The options object passed to the `register` function.
 
 parent: string,
 
-ref: RefObject<T extends Element>
+ref: RefObject<Element>
 
 }
 ```  
@@ -60,7 +60,7 @@ The details of each property is described here:
 Pass the string id of the parent element  
 
 
-* **ref**: `RefObject<T extends Element>`  
+* **ref**: `RefObject<Element>`  
 
 If the tracked element has already a reference, you can pass it and will be reused
 
@@ -122,11 +122,11 @@ The object returned by the hook.
 
 activeIds: string[],
 
-getActiveRef: () => null | RefObject<T extends Element>,
+getActiveRef: () => null | RefObject<Element>,
 
 isActive: (id : string) => boolean,
 
-register: (id : string, options : RegisterOptions<T extends Element>) => RegisteredAttributes<T extends Element>,
+register: (id : string, options ?: RegisterOptions) => RegisteredAttributes<T extends Element>,
 
 unregister: (idToUnregister : string) => void
 
@@ -142,7 +142,7 @@ The details of each property is described here:
 A list of active ids (the full hierarchy).  
 
 
-* **getActiveRef**: `() => null | RefObject<T extends Element>`
+* **getActiveRef**: `() => null | RefObject<Element>`
 
 
 A function to retrieve the reference of the current active element (only the last element, not the elements hierarchy).  
@@ -154,7 +154,7 @@ A function to retrieve the reference of the current active element (only the las
 A convenience function to quickly check the active state for the given id  
 
 
-* **register**: `(id : string, options : RegisterOptions<T extends Element>) => RegisteredAttributes<T extends Element>`
+* **register**: `(id : string, options ?: RegisterOptions) => RegisteredAttributes<T extends Element>`
 
 
 The function used to register the component into the tracking system.  
