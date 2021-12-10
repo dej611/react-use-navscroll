@@ -10,8 +10,7 @@ import { debounce } from './debounce';
 import type {
   useNavScrollArgs,
   useNavScrollResult,
-  TrackedElement,
-  RegisterOptions
+  TrackedElement
 } from './types';
 import { useSizeDetector } from './useSizeDetector';
 
@@ -36,11 +35,9 @@ function resolveHierarchyIds(
  * the state of the passed ids. The function accepts an initial configuration
  * of type `useNavScrollArgs` to customize the behaviour.
  */
-export function useNavScroll<T extends Element>(
-  args: useNavScrollArgs = {}
-): useNavScrollResult<T> {
+export function useNavScroll(args: useNavScrollArgs = {}): useNavScrollResult {
   const { onChange, root, offset = 50, isHorizontal = false } = args;
-  const els = useRef<TrackedElement<T>[]>([]);
+  const els = useRef<TrackedElement[]>([]);
   const [counter, setCounter] = useState(0);
   const [forceRecompute, setForceRecompute] = useState(false);
   const [activeId, updateActiveId] = useState<string | null>(null);
@@ -148,7 +145,7 @@ export function useNavScroll<T extends Element>(
   );
 
   const register = useCallback(
-    (id: string, options: RegisterOptions<T> = {}) => {
+    (id, options = {}) => {
       if (!hasWindow) {
         return { id, ref: null };
       }

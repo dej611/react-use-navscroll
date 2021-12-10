@@ -1,4 +1,4 @@
-import { HTMLAttributes, LegacyRef, Ref, RefObject } from 'react';
+import { HTMLAttributes, RefObject } from 'react';
 
 /**
  * The returned object from the `onChange` passed function, with the current state of
@@ -35,7 +35,7 @@ export type useNavScrollArgs = {
 /**
  * The options object passed to the `register` function.
  */
-export type RegisterOptions<T> = {
+export type RegisterOptions = {
   /**
    * Pass the string id of the parent element
    */
@@ -43,29 +43,29 @@ export type RegisterOptions<T> = {
   /**
    * If the tracked element has already a reference, you can pass it and will be reused
    */
-  ref?: RefObject<T>;
+  ref?: RefObject<Element>;
 };
 
 /**
  * The attributes object to assign to the element to assign
  */
-export type RegisteredAttributes<T> = {
+export type RegisteredAttributes<T extends Element> = {
   id: HTMLAttributes<T>['id'];
-  ref: Ref<T> | LegacyRef<T>;
+  ref: RefObject<T> | null;
 };
 
 /**
  * The object returned by the hook.
  */
-export type useNavScrollResult<T extends Element> = {
+export type useNavScrollResult = {
   /**
    * The function used to register the component into the tracking system.
    * It returns the id already passed and the reference object.
    * Note that only the reference value will be `null` in a SSR context.
    */
-  register: (
+  register: <T extends Element>(
     id: string,
-    options?: RegisterOptions<T>
+    options?: RegisterOptions
   ) => RegisteredAttributes<T>;
   /**
    * Removes the given id from the tracking system.
@@ -82,11 +82,11 @@ export type useNavScrollResult<T extends Element> = {
   /**
    * A function to retrieve the reference of the current active element (only the last element, not the elements hierarchy).
    */
-  getActiveRef: () => RefObject<T> | null;
+  getActiveRef: () => RefObject<Element> | null;
 };
 
 // @private
-export type TrackedElement<T> = {
+export type TrackedElement = {
   id: string;
-} & Required<Pick<RegisterOptions<T>, 'ref'>> &
-  Pick<RegisterOptions<T>, 'parent'>;
+} & Required<Pick<RegisterOptions, 'ref'>> &
+  Pick<RegisterOptions, 'parent'>;

@@ -74,7 +74,7 @@ function typeDescription({ type, ...props } = {}, inline = false) {
     if (props.typeArguments) {
       return `${props.name}<${props.typeArguments
         .map(({ type: innerType, ...innerProps }) => {
-          return innerType === 'reference'
+          return innerType === 'reference' && innerProps.name !== 'Element'
             ? // TODO: refactor this to be more generic
               `${innerProps.name} extends Element`
             : typeDescription({ type: innerType, ...innerProps });
